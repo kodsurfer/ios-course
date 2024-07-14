@@ -14,7 +14,6 @@
 		A9F4A91C2C43E2F500D3BE7C /* ios_courseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4A91B2C43E2F500D3BE7C /* ios_courseTests.swift */; };
 		A9F4A9262C43E2F500D3BE7C /* ios_courseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4A9252C43E2F500D3BE7C /* ios_courseUITests.swift */; };
 		A9F4A9282C43E2F500D3BE7C /* ios_courseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4A9272C43E2F500D3BE7C /* ios_courseUITestsLaunchTests.swift */; };
-		A9F4A9352C43E5D100D3BE7C /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4A9342C43E5D100D3BE7C /* PasscodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		A9F4A9212C43E2F500D3BE7C /* ios-courseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-courseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F4A9252C43E2F500D3BE7C /* ios_courseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_courseUITests.swift; sourceTree = "<group>"; };
 		A9F4A9272C43E2F500D3BE7C /* ios_courseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_courseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A9F4A9342C43E5D100D3BE7C /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				A9F4A90D2C43E2F500D3BE7C /* Assets.xcassets */,
 				A9F4A90F2C43E2F500D3BE7C /* ios_course.entitlements */,
 				A9F4A9102C43E2F500D3BE7C /* Preview Content */,
-				A9F4A9342C43E5D100D3BE7C /* PasscodeView.swift */,
 			);
 			path = "ios-course";
 			sourceTree = "<group>";
@@ -262,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F4A9352C43E5D100D3BE7C /* PasscodeView.swift in Sources */,
 				A9F4A90C2C43E2F400D3BE7C /* ContentView.swift in Sources */,
 				A9F4A90A2C43E2F400D3BE7C /* ios_courseApp.swift in Sources */,
 			);

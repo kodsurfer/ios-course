@@ -45,7 +45,6 @@ struct ContentView: View {
             .padding(.horizontal, 20)
             
             Button(action: {
-                // Действие при нажатии на кнопку
             }) {
                 Text("Подтвердить")
                     .font(.headline)
