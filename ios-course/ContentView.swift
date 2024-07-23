@@ -6,61 +6,51 @@
 //
 import SwiftUI
 
+
+enum NavigationType {
+    case push
+    case present
+    case custom
+}
+
 struct ContentView: View {
-    @State private var phoneNumber = ""
-    
+    @State private var navigationPath = NavigationPath()
+
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Введите код телефона")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.top, 50)
-            
-            Text("Мы отправили вам SMS с кодом на номер")
-                .font(.subheadline)
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 20)
-            
-            Text("+7 (999) 123-45-67")
-                .font(.title2)
-                .fontWeight(.semibold)
-                .padding(.bottom, 20)
-            
-            HStack(spacing: 10) {
-                ForEach(0..<4) { index in
-                    TextField("", text: $phoneNumber)
-                        .frame(width: 60, height: 60)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(10)
-                        .multilineTextAlignment(.center)
-                        .keyboardType(.numberPad)
-                        .onChange(of: phoneNumber) { newValue in
-                            if newValue.count > 4 {
-                                phoneNumber = String(newValue.prefix(4))
-                            }
-                        }
+        NavigationStack(path: $navigationPath) {
+            VStack {
+                Button("Push Screen") {
+                    navigate(to: Text("Pushed Screen"), type: .push)
+                }
+                Button("Present Screen") {
+                    navigate(to: Text("Presented Screen"), type: .present)
+                }
+                Button("Custom Screen") {
+                    navigate(to: Text("Custom Screen"), type: .custom)
+                }
+                Button("Clear All Screens") {
+                    navigationPath = NavigationPath()
                 }
             }
-            .padding(.horizontal, 20)
-            
-            Button(action: {
-            }) {
-                Text("Подтвердить")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
+            .navigationDestination(for: Text.self) { screen in
+                screen
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 30)
-            
-            Spacer()
         }
-        .padding()
-        .background(Color.white.edgesIgnoringSafeArea(.all))
+    }
+
+    private func navigate(to screen: Text, type: NavigationType) {
+        switch type {
+        case .push:
+            navigationPath.append(screen)
+        case .present:
+            // Для презентации можно использовать sheet или fullScreenCover
+            // В данном примере используем sheet для простоты
+            navigationPath.append(screen)
+        case .custom:
+            // Для кастомной анимации можно использовать transition
+            // В данном примере просто добавляем в стек
+            navigationPath.append(screen)
+        }
     }
 }
 
