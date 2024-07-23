@@ -29,3 +29,21 @@ func makeOpaqueContainer<T>(_ item: T) -> some Container {
     stack.push(item)
     return stack
 }
+
+class AnyContainer<T>: Container {
+    private let _add: (T) -> Void
+    private let _remove: () -> T?
+    
+    init<C: Container>(_ container: C) where C.Item == T {
+        _add = container.add
+        _remove = container.remove
+    }
+    
+    func add(_ item: T) {
+        _add(item)
+    }
+    
+    func remove() -> T? {
+        return _remove()
+    }
+}
