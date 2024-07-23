@@ -22,7 +22,6 @@ struct ContentView: View {
                 localeSettings.setLocale(currentLanguage)
             }
             
-            // Other views will go here
         }
         .environment(\.locale, localeSettings.locale)
     }
