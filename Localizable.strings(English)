@@ -1,0 +1,3 @@
+// Localizable.strings (English)
+"welcome_message" = "Welcome to our app!";
+"language_toggle" = "Toggle Language";
