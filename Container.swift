@@ -47,3 +47,20 @@ class AnyContainer<T>: Container {
         return _remove()
     }
 }
+
+var intStack = Stack<Int>()
+intStack.push(1)
+intStack.push(2)
+print(intStack.pop()) // Optional(2)
+
+let stringQueue = Queue<String>()
+stringQueue.enqueue("Hello")
+stringQueue.enqueue("World")
+print(stringQueue.dequeue()) // Optional("Hello")
+
+let opaqueContainer = makeOpaqueContainer("Swift")
+print(opaqueContainer.remove()) // Optional("Swift")
+
+let anyContainer = AnyContainer(intStack)
+anyContainer.add(3)
+print(anyContainer.remove()) // Optional(3)
