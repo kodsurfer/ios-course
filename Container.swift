@@ -23,3 +23,9 @@ extension Queue: Container {
         return dequeue()
     }
 }
+
+func makeOpaqueContainer<T>(_ item: T) -> some Container {
+    var stack = Stack<T>()
+    stack.push(item)
+    return stack
+}
